@@ -1,4 +1,4 @@
-diff differences between files package-lock.json and PACKAGE-LOCK-BACKUP.JSON
+ differences between files package-lock.json and PACKAGE-LOCK-BACKUP.JSON
 ***** package-lock.json
     "@babel/code-frame": {
       "version": "7.14.5",

@@ -1,0 +1,5 @@
+hello I am a txt file
+this is the second line                                I can see the spaces
+
+
+and blank lines too

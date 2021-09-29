@@ -6,7 +6,8 @@ let user = {
 };
 
 
-var copied = user.sayHello.bind(user);
-let myFunction = user.sayHello;
+
+let myFunction = user.sayHello.bind(user);;
+
 myFunction();
-copied();
+

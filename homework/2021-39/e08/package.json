@@ -1,0 +1,17 @@
+{
+  "name": "e08",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "node-fetch": "^3.0.0",
+    "readline-sync": "^1.4.10"
+  }
+}

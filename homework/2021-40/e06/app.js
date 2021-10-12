@@ -1,5 +1,8 @@
-// const lib = require('./modules/functions.js');
-//var { listNamesAndAmounts } = require('./modules/functions.js');
+const {
+  parsingAndSorting,
+  listNamesAndAmounts,
+} = require('./modules/functions.js');
+
 var fs = require('fs');
 var readlineSync = require('readline-sync');
 var choices = [
@@ -8,20 +11,7 @@ var choices = [
   'Total amount',
   'Amount of given name',
 ];
-function listNamesAndAmounts() {
-  //reading the json
-  function reading(resolve, reject) {
-    fs.readFile('names.json', 'utf-8', (err, data) => {
-      if (err) {
-        reject('problem');
-      } else {
-        resolve(data);
-      }
-    });
-  }
-  const p = new Promise(reading);
-  return p;
-}
+
 async function switching(statusquo = 1) {
   while (statusquo != -1) {
     var statusquo = readlineSync.keyInSelect(choices, 'please choose one: ');
@@ -58,15 +48,5 @@ async function switching(statusquo = 1) {
     }
   }
 }
-async function parsingAndSorting() {
-  var p = await listNamesAndAmounts();
-  var parsed = JSON.parse(p);
-  var values = parsed.names;
-  mapping = [];
-  mapping = values.sort((a, b) => {
-    return b.amount - a.amount;
-  });
 
-  return mapping;
-}
 switching();

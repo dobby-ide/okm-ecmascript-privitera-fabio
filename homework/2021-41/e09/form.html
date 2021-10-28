@@ -11,23 +11,16 @@
   <script>
 
     //to be fixed
-    function bmiCalc(weight, height){
-
-  var bmiResult = weight / Math.pow(height, 2);
-  var roundedResult = Math.floor(bmiResult);
-
-  return roundedResult;
-}
     
 document.addEventListener('keydown', (event) => {
-  var height = document.getElementById("height");
-  var mass = document.getElementById("mass");
-  let realH = height.value*height.value;
+  var height = document.getElementById("height").value;
+  var mass = document.getElementById("mass").value;
+  let realH = height*height;
   console.log("square height is: " + realH)
   
-  let realMass = mass.value
-let realM = realMass/realH;
-  document.getElementById("inputReceived").innerHTML = realM;
+  let realMass = mass/realH
+
+  document.getElementById("inputReceived").innerHTML = realMass;
 }, true);
   </script>
  

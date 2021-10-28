@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <ul>
+    <li id="list">hello</li>
+  </ul>
+  <input class = "input" type = "text" id="userinput">
+  <script>
+ const node = document.getElementsByClassName("input")[0];
+node.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        //create a new element on the lsit
+        let li = document.createElement("li");
+        c.appendChild(li);
+        li.innerHTML = node.value;
+    }
+});
+    
+    var c = document.getElementsByTagName("li")[0];
+    var newLi = document.createElement("li");
+    c.appendChild(newLi)
+    newLi.innerHTML ="hello";
+    console.log(c.innerHTML)
+    var body = document.getElementsByTagName('body')[0];
+    var button = document.createElement("button");
+    body.appendChild(button);
+    button.addEventListener("click", event=>{
+      event.preventDefault();
+      console.log("PRESSED")
+      c.lastChild.remove();
+      
+    })
+  </script>
+
+ 
+</body>
+</html>

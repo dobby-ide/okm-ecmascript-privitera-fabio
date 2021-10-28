@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    window.addEventListener("load", createATable)
+        window.addEventListener("load", createAbutton)
+function createAbutton(){
+  var body = document.getElementsByTagName("body")[0];
+  var button = document.createElement("button");
+  button.innerHTML="CLICK";
+  document.body.appendChild(button);
+  button.addEventListener("click", event=>{
+
+    coloringTd()
+     
+  })
+  table.appendChild(document.createTextNode("PUSH"))
+  
+}
+
+  
+   function createATable() {
+  var body = document.getElementsByTagName('body')[0];
+  var tbl = document.createElement('table');
+  tbl.addEventListener('click', event =>{
+
+  let elementList = document.querySelectorAll('td');
+  
+  for(let node of elementList) {
+          node.style.background = colors();
+        }
+
+        
+
+  })
+  tbl.style.width = '50%';
+  tbl.setAttribute('border', '1');
+  var tbdy = document.createElement('tbody');
+  for (var i = 0; i < 5; i++) {
+    var tr = tbl.insertRow()
+    tr.style.height = 200;
+    for(var j = 0; j<5;j++){
+      var td = tr.insertCell();
+      td.style.height = '200px'
+      td.appendChild(document.createTextNode(""))
+    }
+}
+body.appendChild(tbl);
+}
+function colors(){
+ 
+  return '#'+Math.floor(Math.random()*16777215).toString(16);}
+
+
+ 
+ 
+  
+
+CreateATable();
+createAbutton();
+function coloringTd(){
+  let elementList = document.querySelectorAll('td');
+  
+  for(let node of elementList) {
+            
+        setInterval(      
+        node.style.background = colors()),1000;}
+         
+        
+    
+  
+      
+};
+
+
+
+
+   
+  </script>
+</head>
+<body>
+
+
+</body>
+</html>

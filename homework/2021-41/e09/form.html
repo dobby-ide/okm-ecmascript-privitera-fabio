@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    //to be fixed
+    function bmiCalc(weight, height){
+
+  var bmiResult = weight / Math.pow(height, 2);
+  var roundedResult = Math.floor(bmiResult);
+
+  return roundedResult;
+}
+    
+document.addEventListener('keydown', (event) => {
+  var height = document.getElementById("height");
+  var mass = document.getElementById("mass");
+  let realH = height.value*height.value;
+  console.log("square height is: " + realH)
+  
+  let realMass = mass.value
+let realM = realMass/realH;
+  document.getElementById("inputReceived").innerHTML = realM;
+}, true);
+  </script>
+ 
+  <form>
+ <ul>
+  <li>
+    <label for="name">height</label>
+    <input type="text" id="height">
+  </li>
+  <li>
+    <label for="mass">mass</label>
+    <input type="text" id="mass">
+  </li>
+  <li class="button">
+  <input type="submit" onclick="showInput();">Send</button>
+</li>
+ 
+ 
+ </ul>
+</form>
+<h1 id="inputReceived">HI</h1>
+</body>
+</html>

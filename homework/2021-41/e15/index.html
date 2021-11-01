@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="form">
+<form>
+    <input id= userInput type=text/>
+    <input type = "submit" id="submitting" onclick="call()">
+</form>
+
+<p id="displaying"></p>
+  </div>
+  <script>
+    //so far I have managed to create a function that gets the user input received
+function call(){
+   event.preventDefault();
+    let myInput = document.getElementById("userInput");
+    console.log(myInput.value);
+    //calling fetch with myinput.value https://swapi.dev/api/people/X/
+    const url = `https://swapi.dev/api/people/${myInput.value}/`;
+    console.log(url)
+    return call2(url);
+        // var fetched = async function(){
+        //   const retrieved = await fetch(url);
+        //   return retrieved;
+        // }
+}
+
+async function call2(url){
+  const myObject = [];
+  const fetched = await fetch(url);
+  const name = await fetched.json();
+  myObject.push(name.name,name.mass,name.height);
+  console.log(myObject);
+  return call3(myObject);
+}
+function call3(myObject){
+  console.log("myobject is " + myObject);
+  document.getElementById("displaying").innerHTML =`name found was ${myObject[0]} and the height was ${myObject[2]} cms and the mass was ${myObject[1]} kilograms`
+}
+
+  </script>
+  
+</body>
+</html>
